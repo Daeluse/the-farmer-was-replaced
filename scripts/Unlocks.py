@@ -77,7 +77,7 @@ def Get_Next_Unlock():
 	]
 	result = None
 	result_cost = None
-	for unlockable in Unlocks:
+	for unlockable in necessary_unlocks:
 		if Can_Unlock(unlockable):
 			unlock_cost = Get_Unlock_Cost(unlockable)
 			if result == None or unlock_cost < result_cost:
