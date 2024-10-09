@@ -4,6 +4,6 @@ This repository holds a collaborative solution to the Leaderboard challenge in t
 
 ## Status
 
-### 2:45:55:810
+### 2:42:11:618
 
-![alt text](image.png)
+![alt text](image-1.png)

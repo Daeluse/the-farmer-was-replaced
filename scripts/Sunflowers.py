@@ -14,6 +14,8 @@ def Plant_Sunflowers():
 			Trade(Items.Sunflower_Seed, 1)
 			plant(Entities.Sunflower)
 			petal_count = measure()
+            if plant_locations[petal_count] == None:
+                plant_locations[petal_count] = []
 			plant_locations[petal_count].append([get_pos_x(), get_pos_y()])
 			move(North)
 		move(East)
