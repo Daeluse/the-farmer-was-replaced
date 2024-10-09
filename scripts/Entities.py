@@ -11,27 +11,39 @@ def Get_Seeds(item):
 		while num_items(item) < cost[item]:
 			Grow(item)
 
+def Get_Power(number):
+	if Is_Unlocked(Unlocks.Sunflowers):
+		while num_items(Items.Power) < number:
+			Grow(Items.Power)
+
 def Grow(item):
-	if (item == Items.Hay):
-		Grow_Grass()
-	elif (item == Items.Wood):
-		Grow_Wood()
-	elif (item == Items.Carrot):
-		Get_Seeds(Items.Carrot_Seed)
-		Grow_Carrots()
+	if (item == Items.Hay or item == Items.Wood or item == Items.Carrot):
+		if Is_Unlocked(Unlocks.Polyculture):
+			Grow_Companion()
+		elif (item == Items.Hay):
+			Grow_Grass()
+		elif (item == Items.Wood):
+			Grow_Wood()
+		elif (item == Items.Carrot):
+			Get_Seeds(Items.Carrot_Seed)
+			Grow_Carrots()
 	elif (item == Items.Gold):
+		Get_Power(1000)
 		Get_Seeds(Items.Fertilizer)
 		Spawn_Maze()
 	elif (item == Items.Cactus):
+		Get_Power(1000)
 		Get_Seeds(Items.Cactus_Seed)
 		Grow_Cacti()
 	elif (item == Items.Power):
 		Get_Seeds(Items.Sunflower_Seed)
 		Grow_Sunflowers()
 	elif (item == Items.Bones):
+		Get_Power(1000)
 		Get_Seeds(Items.Egg)
 		Grow_Dinosaur()
 	elif (item == Items.Pumpkin):
+		Get_Power(1000)
 		Get_Seeds(Items.Pumpkin_Seed)
 		Grow_Pumpkins()
 		

@@ -1,54 +1,47 @@
 def Can_Unlock(unlockable):
 	upgradeable_unlocks = {
-		Unlocks.Auto_Unlock: False,
-		Unlocks.Benchmark: False,
-		Unlocks.Cactus: True,
-		Unlocks.Carrots: True,
-		Unlocks.Costs: False,
-		Unlocks.Debug: False,
-		Unlocks.Debug_2: False,
-		Unlocks.Dictionaries: False,
-		Unlocks.Dinosaurs: True,
-		Unlocks.Expand: True,
-		Unlocks.Fertilizer: False,
-		Unlocks.Functions: False,
-		Unlocks.Grass: True,
-		Unlocks.Leaderboard: False,
-		Unlocks.Lists: False,
-		Unlocks.Loops: False,
-		Unlocks.Mazes: True,
-		Unlocks.Multi_Trade: False,
-		Unlocks.Operators: False,
-		Unlocks.Plant: False,
-		Unlocks.Polyculture: False,
-		Unlocks.Pumpkins: True,
-		Unlocks.Senses: False,
-		Unlocks.Speed: True,
-		Unlocks.Sunflowers: True,
-		Unlocks.Trees: True,
-		Unlocks.Utilities: False,
-		Unlocks.Variables: False,
-		Unlocks.Watering: False,
+		Unlocks.Auto_Unlock: 1,
+		Unlocks.Benchmark: 1,
+		Unlocks.Cactus: 3,
+		Unlocks.Carrots: 4,
+		Unlocks.Costs: 1,
+		Unlocks.Debug: 1,
+		Unlocks.Debug_2: 1,
+		Unlocks.Dictionaries: 1,
+		Unlocks.Dinosaurs: 2,
+		Unlocks.Expand: 10,
+		Unlocks.Fertilizer: 1,
+		Unlocks.Functions: 1,
+		Unlocks.Grass: 5,
+		Unlocks.Leaderboard: 1,
+		Unlocks.Lists: 1,
+		Unlocks.Loops: 1,
+		Unlocks.Mazes: 2,
+		Unlocks.Multi_Trade: 1,
+		Unlocks.Operators: 1,
+		Unlocks.Plant: 1,
+		Unlocks.Polyculture: 1,
+		Unlocks.Pumpkins: 2,
+		Unlocks.Senses: 1,
+		Unlocks.Speed: 10,
+		Unlocks.Sunflowers: 2,
+		Unlocks.Trees: 2,
+		Unlocks.Utilities: 1,
+		Unlocks.Variables: 1,
+		Unlocks.Watering: 1,
 	}
-	result = True
-	cost = get_cost(unlockable)
-	if upgradeable_unlocks[unlockable]:
-		if cost == None:
-			result = False
-	else:
-		result = not Is_Unlocked(unlockable)
-	return result
+	return not num_unlocked(unlockable) == upgradeable_unlocks[unlockable]
 
 def Get_Unlock_Cost(unlockable):
 	weights = {
 		Items.Hay: 1,
 		Items.Wood: 2,
-		Items.Carrot: 3,
-		Items.Pumpkin: 4,
-		Items.Power: 5,
-		Items.Gold: 6,
-		Items.Cactus: 7,
-		Items.Bones: 8,
+		Items.Carrot: 4,
+		Items.Pumpkin: 8,
+		Items.Power: 16,
+		Items.Gold: 32,
+		Items.Cactus: 64,
+		Items.Bones: 128,
 	}
 	total = 0
 	cost = get_cost(unlockable)

@@ -13,7 +13,7 @@ def Has_Empty_Tiles():
 	Move_To(0, 0)
 	for y in range(get_world_size()):
 		for x in range(get_world_size()):
-			if (get_entity_type() == None):
+			if (get_entity_type() == None or not can_harvest()):
 				status = True
 			move(North)
 		move(East)

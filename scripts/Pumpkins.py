@@ -18,11 +18,4 @@ def Grow_Pumpkins():
 	For_Each_Tile(Plant_Pumpkins)
 	while Has_Empty_Tiles():
 		For_Each_Tile(Plant_Pumpkins)
-		Do_Nothing()
-		Do_Nothing()
-		Do_Nothing()
-	while not can_harvest():
-		Do_Nothing()
 	harvest()
-	
-		
