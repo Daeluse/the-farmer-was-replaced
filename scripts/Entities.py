@@ -4,8 +4,7 @@ def Get_Seed_Cost(seed):
 	for item in cost:
 		cost[item] = cost[item] * plot_count
 	return cost
-
-		
+	
 def Get_Seeds(item):
 	cost = Get_Seed_Cost(item)
 	for item in cost:

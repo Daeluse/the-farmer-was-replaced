@@ -30,3 +30,4 @@ def Grow_Companion():
 			move(North)
 		move(East)
 	Do_Harvest(True)
+						
