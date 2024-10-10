@@ -1,8 +1,5 @@
 def Move_To_Origin():
-	while get_pos_x() > 0:
-		move(West)
-	while get_pos_y() > 0:
-		move(South)
+	Move_To(0,0)
 		
 def Move_To(x, y):
 	world_size = get_world_size() - 1

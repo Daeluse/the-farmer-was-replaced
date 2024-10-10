@@ -35,38 +35,28 @@ def Can_Swap():
 	return Can_Swap_North() or Can_Swap_East() or Can_Swap_South() or Can_Swap_West()
 		
 def Do_Swap():
-	prev_x = get_pos_x()
-	prev_y = get_pos_y()
 	while Can_Swap():
-		if Can_Swap_North():
-			swap(North)
-			move(North)
-		elif Can_Swap_East():
-			swap(East)
-			move(East)
-		elif Can_Swap_South():
-			swap(South)
-			move(South)
-		elif Can_Swap_West():
-			swap(West)
-			move(West)
-	Move_To(prev_x, prev_y)
-		
-					
-def Sort_Cacti():
-	for x in range(get_world_size()):
-		for y in range(get_world_size()):
-			while Can_Swap():
-				Do_Swap()
-			move(North)
-		move(East)
+		prev_x = get_pos_x()
+		prev_y = get_pos_y()
+		while Can_Swap():
+			if Can_Swap_North():
+				swap(North)
+				move(North)
+			elif Can_Swap_East():
+				swap(East)
+				move(East)
+			elif Can_Swap_South():
+				swap(South)
+				move(South)
+			elif Can_Swap_West():
+				swap(West)
+				move(West)
+		Move_To(prev_x, prev_y)
 
 def Grow_Cacti():
-	Move_To_Origin()
 	clear()
 	For_Each_Tile(Plant_Cactus)
-	Move_To(0,0)
-	Sort_Cacti()
+	For_Each_Tile(Do_Swap)
 	while not can_harvest():
 		Do_Nothing()
 	harvest()

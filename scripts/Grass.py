@@ -10,8 +10,5 @@ def Plant_Grass():
 	Make_Ground_Turf()
 	
 def Grow_Grass():
-	Move_To_Origin()
 	clear()
-	Do_Harvest(False)
-	
-		
+	For_Each_Tile(Do_Harvest)

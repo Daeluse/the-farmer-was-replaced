@@ -1,15 +1,3 @@
-def Harvest_Wood():
-	if (get_entity_type() == Entities.Bush):
-		if (can_harvest()):
-			harvest()
-			Plant_Bushes()
-	elif (get_ground_type() == Entities.Tree):
-		if (can_harvest()):
-			harvest()
-			Plant_Trees()
-	else:
-		Plant_Wood()
-
 def Plant_Wood():
 	if not Is_Unlocked(Entities.Tree):
 		Plant_Bushes()
@@ -30,7 +18,6 @@ def Plant_Trees():
 	plant(Entities.Tree)
 	
 def Grow_Wood():
-	Move_To_Origin()
 	clear()
 	For_Each_Tile(Plant_Wood)
-	Do_Harvest(False)
+	For_Each_Tile(Do_Harvest)

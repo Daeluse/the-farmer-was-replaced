@@ -1,6 +1,5 @@
 def Spawn_Maze():
 	clear()
-	Move_To(0,0)
 	Plant_Bushes()
 	while not can_harvest():
 		Do_Nothing()

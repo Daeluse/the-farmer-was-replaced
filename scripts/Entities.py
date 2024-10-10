@@ -47,16 +47,7 @@ def Grow(item):
 		Get_Seeds(Items.Pumpkin_Seed)
 		Grow_Pumpkins()
 		
-def Do_Harvest(use_fertilizer):
-	Move_To(0, 0)
-	for y in range(get_world_size()):
-		for x in range(get_world_size()):
-			while (get_entity_type() != None and not can_harvest()):
-				if (use_fertilizer):
-					trade(Items.Fertilizer)
-					use_item(Items.Fertilizer)
-				else:
-					Do_Nothing()
-			harvest()
-			move(North)
-		move(East)
+def Do_Harvest():
+	while (get_entity_type() != None and not can_harvest()):
+		Do_Nothing()
+	harvest()
