@@ -17,6 +17,8 @@ def Get_Power(number):
 			Grow(Items.Power)
 
 def Grow(item):
+	if num_items(Items.Wood) > 500 and num_items(Items.Water_Tank) < 50:
+		trade(Items.Empty_Tank)
 	if (item == Items.Hay or item == Items.Wood or item == Items.Carrot):
 		if Is_Unlocked(Unlocks.Polyculture):
 			Grow_Companion()

@@ -24,6 +24,7 @@ def Plant_Companion():
 
 def Grow_Companion():
 	clear()
-	For_Each_Tile(till)
+	For_Each_Tile(Make_Ground_Soil)
 	For_Each_Tile(Plant_Companion)
 	For_Each_Tile(Do_Harvest)
+						

@@ -1,5 +1,5 @@
 def Do_Nothing():
-	do_a_flip()
+	return
 
 def For_Each_Tile(callback):
 	Move_To(0,0)
